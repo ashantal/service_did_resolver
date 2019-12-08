@@ -5,7 +5,7 @@ exports.getResolver = () => {
       didResolver
     )
     {
-      var address='0xba25783176a82174b81e5716f80c7d2dde7eedc0'//'0xf3beac30c498d9e26865f34fcaa57dbb935b0d74'
+      var address='0x199254bf2a7b5d0c705cdb1648f4165e64364696'//'0xf3beac30c498d9e26865f34fcaa57dbb935b0d74'
       var did='did:ethr:'+address
       var pub= did + '#owner'
 

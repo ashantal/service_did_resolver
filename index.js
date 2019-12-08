@@ -19,7 +19,7 @@
   console.log(`seed 0x${seed.toString('hex')}`)
   const hdk = hdkey.fromMasterSeed(seed)
   
-  const path = `m/7696500'/0'/0'/0`;
+  const path = `m/7696500'/0'/0'/0'`;
   const hdnode = hdk.derivePath(path);
   const wallet = hdnode.getWallet(); 
   var privKey = wallet.getPrivateKey();//hdnode.getWallet().getPublicKey(); 
@@ -41,11 +41,9 @@
 
   var did=`did:ethr:0x${address}`
   var didPrivateKey=privKey.toString('hex');
-  
-  console.log(`pub 0x${key}`)
-  
+
   console.log(`did ${did}`)
-  
+  console.log(`pubKey 0x${key}`)
   console.log(`priv 0x${didPrivateKey}`)
   
   const signer = didJWT.SimpleSigner(didPrivateKey);
@@ -61,7 +59,8 @@
       }).then( 
           response =>
           { 
-             jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpc3MiOiJkaWQ6ZXRocjoweGJhMjU3ODMxNzZhODIxNzRiODFlNTcxNmY4MGM3ZDJkZGU3ZWVkYzAiLCJhdWQiOiJkaWQ6ZXRocjoweGJhMjU3ODMxNzZhODIxNzRiODFlNTcxNmY4MGM3ZDJkZGU3ZWVkYzAiLCJleHAiOjE1NzU4MDA5ODQsInR5cGUiOiJzaGFyZVJlc3AiLCJvd24iOnsibmFtZSI6IkFzaCJ9LCJyZXEiOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpGVXpJMU5rc3RVaUo5LmV5SnBZWFFpT2pFMU56VTJPVGM0T1RBc0ltVjRjQ0k2TVRVM05UWTVPRFE1TUN3aWNtVnhkV1Z6ZEdWa0lqcGJJbTVoYldVaVhTd2lkbVZ5YVdacFpXUWlPbHNpVlhCdmNuUnNZVzVrYVdFZ1EybDBlU0JKUkNKZExDSmpZV3hzWW1GamF5STZJbWgwZEhCek9pOHZPV1ZoT0dSbU4yWXVibWR5YjJzdWFXOHZZMkZzYkdKaFkyc2lMQ0owZVhCbElqb2ljMmhoY21WU1pYRWlMQ0pwYzNNaU9pSmthV1E2WlhSb2Nqb3dlR0pqTTJGbE5UbGlZemMyWmpnNU5EZ3lNall5TW1Oa1pXWTNZVEl3TVRoa1ltVXpOVE00TkRBaWZRLmtzY0dLNDd0MjVSREhEV0IwLWFKOHJnZnBwNjdKbEVTZjVvNGdUMndxX1lsNlYyMmFySnowdFA4ZlV1SlR6RVNFN1hLV0F1Qk80T0J2SmJ4N2kzeFVRQSJ9.MQmx_topZzDsUxoxckkIwdQ-EgQYTQ_dRtL0TIPArLxnRT92L4Ez4piiVcEswCyYWygY_g-ncFQ4xfzSxev78QE"
+             //jwt = response;
+             jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpc3MiOiJkaWQ6ZXRocjoweDE5OTI1NGJmMmE3YjVkMGM3MDVjZGIxNjQ4ZjQxNjVlNjQzNjQ2OTYiLCJhdWQiOiJkaWQ6ZXRocjoweDE5OTI1NGJmMmE3YjVkMGM3MDVjZGIxNjQ4ZjQxNjVlNjQzNjQ2OTYiLCJleHAiOjE1NzU4MzA2NDAsInR5cGUiOiJzaGFyZVJlc3AiLCJvd24iOnsibmFtZSI6IkFzaCJ9LCJyZXEiOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpGVXpJMU5rc3RVaUo5LmV5SnBZWFFpT2pFMU56VTRNamswT1RNc0ltVjRjQ0k2TVRVM05UZ3pNREE1TXl3aWNtVnhkV1Z6ZEdWa0lqcGJJbTVoYldVaVhTd2lkbVZ5YVdacFpXUWlPbHNpVlhCdmNuUnNZVzVrYVdFZ1EybDBlU0JKUkNKZExDSmpZV3hzWW1GamF5STZJbWgwZEhCek9pOHZNakZsTm1Fek1qa3VibWR5YjJzdWFXOHZZMkZzYkdKaFkyc2lMQ0owZVhCbElqb2ljMmhoY21WU1pYRWlMQ0pwYzNNaU9pSmthV1E2WlhSb2Nqb3dlR0pqTTJGbE5UbGlZemMyWmpnNU5EZ3lNall5TW1Oa1pXWTNZVEl3TVRoa1ltVXpOVE00TkRBaWZRLmtyRlRNb0NmR0Y4UHB5WUlTYUFuYmxwdnNDOG9udldYQjM2NmQ3cUdRX01MWXpaTDdOYVVfX3FwR3JMOFpkYldMRzBwMEszMHI2QXFXQkpTZ3NUdkNBQSJ9.cQ5jd9gPlB3WzDCM0-J68HDBkU7W0DVmW0CKZeLPbiF22IddpdJFB31tGur0mMNDxcQGlwdtQqUHKP2CCvR9fQE"
              let decoded = didJWT.decodeJWT(jwt)
               let verifiedRespone = {};
               // pass the JWT from step 1 & 2
