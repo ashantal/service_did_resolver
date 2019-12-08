@@ -12,6 +12,7 @@
     "bip39": "^3.0.2",
     "crypto": "^1.0.1",
     "did-jwt": "^3.0.0",
+    "did-resolver": "^1.1.0",
     "ethereum-bip44-update": "^2.1.5",
     "ethereum-hdwallet": "0.0.23",
     "ethereumjs-util": "^6.2.0",
