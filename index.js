@@ -1,8 +1,7 @@
 
   const DIDResolver = require('did-resolver')
-  const MyMethod = require('./my-did-resolver')
-  
   const HDWallet = require('ethereum-hdwallet')
+  const MyMethod = require('./my-did-resolver')
   var hdkey = require('ethereumjs-wallet/hdkey')
   var bip39 = require('bip39');
   const secp256k1 = require('secp256k1')
@@ -13,7 +12,7 @@
   
   
   const mnemonic = 'analyst end eye apple burden trust snack question feature monkey dinner loan'
-  const hdwallet = HDWallet.fromMnemonic(mnemonic)
+//  const hdwallet = HDWallet.fromMnemonic(mnemonic)
   
   var seed = bip39.mnemonicToSeedSync(mnemonic)
   console.log(`seed 0x${seed.toString('hex')}`)

@@ -16,6 +16,7 @@
     "ethereum-bip44-update": "^2.1.5",
     "ethereum-hdwallet": "0.0.23",
     "ethereumjs-wallet": "^0.6.3",
+    "ngrok": "^3.2.5",
     "secp256k1": "^3.7.1",
     "truffle-hdwallet-provider": "^1.0.17"
   }
